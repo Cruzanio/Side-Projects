@@ -84,7 +84,6 @@ var person = {
 
 
 //Booleans in Functions
-var val1 = 10 < 0
 function TrueOrFalse(val) {
     if (val === true) {
         console.log("That value is true")
@@ -92,10 +91,9 @@ function TrueOrFalse(val) {
         console.log("That value is false")
     }
 }
-TrueOrFalse(val1)
+TrueOrFalse()
 
 function saleHotdogs(n){
-
     if (n < 5) {
         var price = 100 * n
         return price
@@ -107,4 +105,29 @@ function saleHotdogs(n){
         return price
     }
 }
+saleHotdogs()
 
+
+function howManydays(month){
+    var days;
+    switch (month){
+        case 2:
+            days = 28;
+            break;
+        case 4:
+            days = 30;
+            break;
+        case 6:
+            days = 30;
+            break;
+        case 9:
+            days = 30;
+            break;
+        case 11:
+            days = 30;
+            break;
+        default:
+            days = 31
+    } return days;
+}
+howManydays()
