@@ -5,16 +5,50 @@
     <title>moreDOM</title>
 </head>
 <body>
-<p id="demo"></p>
-<p id="demoText"></p>
+<p id="p1">To be or not to be?</p>
+<p id="p2" data-playname="Hamlet">That is the question.</p>
 <script>
-    function change() {
-        var newInnerHTML = document.getElementById("demo")
-        newInnerHTML.innerHTML = '<b>Hello IO!</br>'
-        var newInnerText = document.getElementById("demoText")
-        newInnerText.innerText = "<b>Hello IO!</b>"
-    }
-    change()
+    "use strict";
+    (function () {
+        // Change the style of p1 to 'font-size: 4rem'
+        let p1Style = document.getElementById('p1')
+        p1Style.setAttribute('style', 'font-size: 4rem')
+
+        // Get the data-* attribute from p2
+        let p2 = document.getElementById("p2")
+        let dataAttr = p2.getAttribute("data-playname")
+
+        // Print the data-* attribute on the console log.
+        alert(dataAttr)
+
+    })();
+    (function () {
+        // Get the body element (notice we need to use index 0 of the array!)
+        var bodyElement = document.getElementsByTagName('body')[0];
+
+        // Change the body font color
+        bodyElement.style.color = '#444'; // Dark grey
+
+        bodyElement.style['background-color'] = "#fefefe"; // Very light grey
+        // We had to use [] syntax since the property name has a dash
+
+        bodyElement.style.fontFamily = "Helvetica, Verdana, Sans-Serif";
+        // Replace dashes with camelCase to use standard . syntax
+    })();
+
 </script>
 </body>
+<!--<body>-->
+<!--<p id="demo"></p>-->
+<!--<p id="demoText"></p>-->
+<!--<script>-->
+<!--    function change() {-->
+<!--        var newInnerHTML = document.getElementById("demo")-->
+<!--        newInnerHTML.innerHTML = '<b>Hello IO!</br>'-->
+<!--        var newInnerText = document.getElementById("demoText")-->
+<!--        newInnerText.innerText = "<b>Hello IO!</b>"-->
+<!--    }-->
+<!--    change()-->
+<!--</script>-->
+<!--</body>-->
 </html>
