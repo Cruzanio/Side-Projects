@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Loops</title>
+</head>
+<body>
+<script>
+    var i = 0
+    while(i <= 10) {
+        console.log("While loop iteration #" + i);
+        i++;
+        if (i === 4) {
+            console.log("Break!");
+            break;
+        }
+    }
+
+    for (var j = 1; j < 100; j++) {
+        if (j % 2 === 1) {
+            continue;
+        }
+        console.log('Here is an even number: ' + j)
+    }
+
+    for (var j = 1; j < 100; j++) {
+        if (j % 3 !== 0) {
+            continue;
+        }
+        console.log('Divisible by 3: ' + j)
+    }
+</script>
+
+</body>
+</html>

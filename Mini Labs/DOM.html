@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>JavaScript Example</title>
+</head>
+<body >
+<form name="login">
+    <div>
+        <label for="personName">Enter your name:</label>
+        <input id="personName" name="personName" type="text" placeholder="name">
+    </div>
+</form>
+<br>
+<button onclick="saveUsername()">Save Text</button>
+<hr />
+<h1 id="out"></h1>
+<script>
+    "use strict";
+    function saveUsername() {
+        let hout = document.getElementById('out');
+        // get the "username" input
+        var usernameInput = document.forms.login.personName;
+        // log the value of the "username" input
+        hout.innerText = usernameInput.value;
+    }
+</script>
+</body>

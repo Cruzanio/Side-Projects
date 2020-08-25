@@ -1,0 +1,76 @@
+/* color mods */
+.gradient {
+    background-image: linear-gradient(
+            #f0f0f0,
+            #f0f0f0 40%,
+            white 40%,
+            white 80%,
+            #f0f0f0 80%
+    );
+}
+.bg-primary {
+    background-color: #f0f0f0 !important;
+    color: #f0f0f0 !important;
+}
+.c1 {
+    background-color: #e6563b;
+}
+.c2 {
+    background-color: #EB9D3A;
+}
+.c3 {
+    background-color: #7cb06c;
+}
+.c4 {
+    background-color: #00aba9;
+}
+.a:hover {
+    background-color: #555555 !important;
+    /*color: darkorange !important;*/
+    border-radius: 20px;
+}
+
+
+/* container sizing */
+.logo {
+    width: 200px;
+    height: 200px;
+}
+.lrg-circle {
+    width: 200px;
+    height: 200px;
+    border: 1em solid #ffffff;
+    text-align: center;
+}
+.icon {
+    height: 50px;
+    width: 50px;
+    text-align: center;
+}
+.img-sm {
+    border: 1em solid #e6e6e6;
+}
+
+
+/* font sizing/families */
+.heading1 {
+    font-size: 4em;
+}
+.heading2 {
+    font-size: 3em;
+}
+.heading3 {
+    font-size: 2.5em;
+}
+.heading4 {
+    font-size: 2em;
+}
+.heading5 {
+    font-size: 1.75em;
+}
+.abel {
+    font-family: 'Abel', sans-serif;
+}
+.anton {
+    font-family: 'Anton', sans-serif;
+}

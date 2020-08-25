@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>moreDOM</title>
+</head>
+<body>
+<p id="demo"></p>
+<p id="demoText"></p>
+<script>
+    function change() {
+        var newInnerHTML = document.getElementById("demo")
+        newInnerHTML.innerHTML = '<b>Hello IO!</br>'
+        var newInnerText = document.getElementById("demoText")
+        newInnerText.innerText = "<b>Hello IO!</b>"
+    }
+    change()
+</script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BOM</title>
+</head>
+<body>
+<button type="button" onclick="reloadFromCache()">Refresh!</button>
+<button type="button" onclick="reloadFromServer()">Refresh!</button>
+<button id="btnToClick">Click Me</button>
+<h1 class="c" id="lone"></h1>
+<p class="b"></p>
+<p class="a"></p>
+<p class="b"></p>
+<script>
+
+    "use strict";
+
+    (function() {
+        var tagItems = document.getElementsByTagName('p');
+        let output = ""
+        let display = document.getElementById(lone)
+        for (var i = 0; i <= tagItems.length-1; i++) {
+            output += tagItems[i].innerHTML + '<br>'
+
+        }
+        display.innerHTML = output
+    })();
+
+
+    // (function() {
+    //     // Get all elements with class 'a'
+    //     var aElements = document.getElementsByClassName('a');
+    //     // Get all elements with class 'b'
+    //     var bElements = document.getElementsByClassName('b');
+    //     // Print all elements
+    //     var output = ''
+    //     var output1 = ''
+    //     for (var i = 0; i < aElements.length; i++) {
+    //         output += aElements[i].outerHTML + '\n'
+    //         console.log(output)
+    //     }
+    //     for (var i = 0; i < bElements.length; i++) {
+    //         output1 += bElements[i].outerHTML + '\n'
+    //         console.log(output1)
+    //     }
+    // })();
+
+    (function() {
+        var h1 = document.getElementById('demo');
+        h1.innerHTML = 'IO Rocks!';
+    })();
+
+    (function() {
+        var btnToClick = document.getElementById('btnToClick');
+
+        console.log(btnToClick); // prints <button id="btnToClick">Click Me</button>
+    })();
+
+    function reloadFromCache() {
+        location.reload()
+        alert("from cache, possibly")
+    }
+    function reloadFromServer() {
+        location.reload(true)
+        alert("from server")
+    }
+
+</script>
+<script src="js/BOM.js"></script>
+</body>
+</html>
