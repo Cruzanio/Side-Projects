@@ -79,8 +79,13 @@ var person = {
     firstName: "Cruzanio",
     lastName: "Villarreal",
     age: 23,
-    eyeColor: "Brown"
+    eyeColor: "Brown",
+    sayHi: function () {
+        alert("Hello!")
+    }
 };
+
+person.sayHi()
 
 
 //Booleans in Functions
@@ -105,7 +110,7 @@ function saleHotdogs(n){
         return price
     }
 }
-saleHotdogs()
+console.log(saleHotdogs(100))
 
 
 function howManydays(month){
@@ -130,4 +135,4 @@ function howManydays(month){
             days = 31
     } return days;
 }
-howManydays()
+console.log(howManydays(4))
