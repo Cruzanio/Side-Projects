@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Loop Pushup</title>
+</head>
+<body>
+<h1 id="counter"></h1>
+<h2></h2>
+<script>
+    var countDownTimer = 10
+    function updateTimer () {
+        if (countDownTimer === 0) {
+            document.getElementById("counter")
+            document.getElementById("counter").innerHTML = "All Done!"
+        } else if (countDownTimer >= 0) {
+            document.getElementById("counter").innerHTML = "Counting Down...." + countDownTimer
+            countDownTimer--
+        }
+
+    }
+    updateTimer()
+
+    function count() {
+        var h2 = document.getElementsByTagName('h2')[0]
+        var output = ""
+        for (var i = 0; i <= 10; i++) {
+            output += [i] + '<br>'
+        }h2.innerHTML = output
+    }
+    count()
+
+</script>
+</body>
+</html>
