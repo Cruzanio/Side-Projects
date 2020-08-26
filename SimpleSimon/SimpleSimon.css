@@ -12,53 +12,57 @@ body {
 .square-red {
     height: 10em;
     width: 10em;
-    margin: .5em;
     background-color: #F00;
-    opacity: 60%;
+    opacity: 30%;
 }
 
 .square-green {
     height: 10em;
     width: 10em;
-    margin: .5em;
     background-color: #0F0;
-    opacity: 60%;
+    opacity: 30%;
 }
 
 .square-blue {
     height: 10em;
     width: 10em;
-    margin: .5em;
     background-color: #00F;
-    opacity: 60%;
+    opacity: 30%;
 }
 
 .square-yellow {
     height: 10em;
     width: 10em;
-    margin: .5em;
     background-color: #FF0;
-    opacity: 60%;
+    opacity: 30%;
+}
+
+.container {
+    width: 50%
 }
 
 .outer-square {
     border: .5em solid lightgrey;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0;
-    padding: 0;
 }
 
 .r-g {
     display: flex;
     flex-direction: column;
-    margin-right: 1em;
+    align-items: center;
+    width: 100%;
+    margin-left: auto;
 }
 .b-y {
     display: flex;
     flex-direction: column;
-    margin-left: 1em;
+    align-items: center;
+    width: 100%;
+    margin-right: auto;
+
 }
 
 .main-container {
