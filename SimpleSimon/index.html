@@ -17,18 +17,22 @@
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
         crossorigin="anonymous"></script>
 <script src="SimpleSimon.js"></script>
-<h1>Welcome to Simple Simon!</h1>
-<main class="container">
-    <div class="outer-square">
-        <div class="r-g">
-            <button type="button" id="red" class="square-red"></button>
-            <button type="button" id="green" class="square-green"></button>
+<main class="main-container">
+    <h1 class="py-3">Welcome to Simple Simon!</h1>
+    <article class="container">
+        <div class="outer-square">
+            <div class="r-g">
+                <button type="button" id="red" class="square-red"></button>
+                <button type="button" id="green" class="square-green"></button>
+            </div>
+            <div class="b-y">
+                <button type="button" id="blue" class="square-blue"></button>
+                <button type="button" id="yellow" class="square-yellow"></button>
+            </div>
         </div>
-        <div class="b-y">
-            <button type="button" id="blue" class="square-blue"></button>
-            <button type="button" id="yellow" class="square-yellow"></button>
-        </div>
-    </div>
+    </article>
+    <h3 class="py-3" >Click start to begin.</h3>
+    <button type="button" id="start-btn">Start New Game</button>
 </main>
 </body>
 </html>
