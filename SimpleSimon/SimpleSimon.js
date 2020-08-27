@@ -18,7 +18,7 @@ function randomColor() {
     var randomColor = squares[Math.floor(Math.random() * squares.length)];
     simonsArray.push(randomColor);
     console.log(simonsArray)
-    showPattern(simonsArray[simonsArray.length - 1]);
+    showPattern(simonsArray[simonsArray.length - 1])
     nextStage()
     playersArray = [];
 }
@@ -47,44 +47,98 @@ function randomColor() {
 // }
 
 
-//FADE TEST
-function showPattern(element) {
-    switch (element) {
-        case 'red':
-            fadeIn()
-            break;
-        case 'green':
-            fadeIn()
-            break;
-        case 'blue':
-            fadeIn()
-            break;
-        case 'yellow':
-            fadeIn()
-            break;
-        default:
-            break;
-    }
-}
+//FADE TEST #1 successfully fades with each click but doesn't reset
+// function showPattern(element) {
+//     switch (element) {
+//         case 'red':
+//             // while (i < simonsArray.length-1) {
+//             var buttonToFade = document.getElementById(element);
+//             console.log(buttonToFade)
+//             opacity = Number(window.getComputedStyle(buttonToFade).getPropertyValue("opacity"));
+//             if (opacity < 1) {
+//                 opacity = opacity + 0.1;
+//                 buttonToFade.style.opacity = opacity;
+//             } else {
+//                 clearInterval(intervalID);
+//             }
+//             // } i++
+//             break;
+//         case 'green':
+//             var buttonToFade = document.getElementById(element);
+//             console.log(buttonToFade)
+//             opacity = Number(window.getComputedStyle(buttonToFade).getPropertyValue("opacity"));
+//             if (opacity < 1) {
+//                 opacity = opacity + 0.1;
+//                 buttonToFade.style.opacity = opacity;
+//             } else {
+//                 clearInterval(intervalID);
+//             }
+//             break;
+//         case 'blue':
+//             var buttonToFade = document.getElementById(element);
+//             console.log(buttonToFade)
+//             opacity = Number(window.getComputedStyle(buttonToFade).getPropertyValue("opacity"));
+//             if (opacity < 1) {
+//                 opacity = opacity + 0.1;
+//                 buttonToFade.style.opacity = opacity;
+//             } else {
+//                 clearInterval(intervalID);
+//             }
+//             break;
+//         case 'yellow':
+//             var buttonToFade = document.getElementById(element);
+//             console.log(buttonToFade)
+//             opacity = Number(window.getComputedStyle(buttonToFade).getPropertyValue("opacity"));
+//             if (opacity < 1) {
+//                 opacity = opacity + 0.1;
+//                 buttonToFade.style.opacity = opacity;
+//             } else {
+//                 clearInterval(intervalID);
+//             }
+//             break;
+//     }
+// }
 
-
+//idea is to access the opacity value of the passed in "element"
 var opacity = 0
 var intervalID = 0;
 
-function show(element) {
+// function show(element) {
+//     var buttonToFade = document.getElementById(element);
+//     console.log(buttonToFade)
+//     opacity = Number(window.getComputedStyle(element).getPropertyValue("opacity"));
+//     if (opacity < 1) {
+//         opacity = opacity + 0.1;
+//         buttonToFade.style.opacity = opacity;
+//     } else {
+//         clearInterval(intervalID);
+//     }
+// }
+
+
+function showPattern(element) {
     var buttonToFade = document.getElementById(element);
-    opacity = Number(window.getComputedStyle(buttonToFade).getPropertyValue("opacity"));
+    console.log(buttonToFade)
+    opacity = Number(window.getComputedStyle(buttonToFade).getPropertyValue('opacity'))
     if (opacity < 1) {
-        opacity = opacity + 0.1;
+        buttonFlasher()
         buttonToFade.style.opacity = opacity;
     } else {
         clearInterval(intervalID);
     }
 }
 
+function flashOn() {
+    opacity += .1;
+    return opacity
+}
 
-function fadeIn() {
-    setInterval(show, 200)
+
+function flashOff() {
+
+}
+function buttonFlasher() {
+    setInterval(flashOn, 100)
 }
 
 
