@@ -25,6 +25,25 @@ function randomColor() {
 
 
 //This will display the pattern of Simon's choices
+
+
+//idea is to access the opacity value of the passed in "element"
+var opacity = .3
+var intervalID = 0;
+
+// function show(element) {
+//     var buttonToFade = document.getElementById(element);
+//     console.log(buttonToFade)
+//     opacity = Number(window.getComputedStyle(element).getPropertyValue("opacity"));
+//     if (opacity < 1) {
+//         opacity = opacity + 0.1;
+//         buttonToFade.style.opacity = opacity;
+//     } else {
+//         clearInterval(intervalID);
+//     }
+// }
+
+//This will display the pattern of Simon's choices
 // function showPattern(element) {
 //     switch (element) {
 //         case 'red':
@@ -47,136 +66,69 @@ function randomColor() {
 // }
 
 
-//FADE TEST #1 successfully fades with each click but doesn't reset
-// function showPattern(element) {
-//     switch (element) {
-//         case 'red':
-//             // while (i < simonsArray.length-1) {
-//             var buttonToFade = document.getElementById(element);
-//             console.log(buttonToFade)
-//             opacity = Number(window.getComputedStyle(buttonToFade).getPropertyValue("opacity"));
-//             if (opacity < 1) {
-//                 opacity = opacity + 0.1;
-//                 buttonToFade.style.opacity = opacity;
-//             } else {
-//                 clearInterval(intervalID);
-//             }
-//             // } i++
-//             break;
-//         case 'green':
-//             var buttonToFade = document.getElementById(element);
-//             console.log(buttonToFade)
-//             opacity = Number(window.getComputedStyle(buttonToFade).getPropertyValue("opacity"));
-//             if (opacity < 1) {
-//                 opacity = opacity + 0.1;
-//                 buttonToFade.style.opacity = opacity;
-//             } else {
-//                 clearInterval(intervalID);
-//             }
-//             break;
-//         case 'blue':
-//             var buttonToFade = document.getElementById(element);
-//             console.log(buttonToFade)
-//             opacity = Number(window.getComputedStyle(buttonToFade).getPropertyValue("opacity"));
-//             if (opacity < 1) {
-//                 opacity = opacity + 0.1;
-//                 buttonToFade.style.opacity = opacity;
-//             } else {
-//                 clearInterval(intervalID);
-//             }
-//             break;
-//         case 'yellow':
-//             var buttonToFade = document.getElementById(element);
-//             console.log(buttonToFade)
-//             opacity = Number(window.getComputedStyle(buttonToFade).getPropertyValue("opacity"));
-//             if (opacity < 1) {
-//                 opacity = opacity + 0.1;
-//                 buttonToFade.style.opacity = opacity;
-//             } else {
-//                 clearInterval(intervalID);
-//             }
-//             break;
-//     }
-// }
-
-//idea is to access the opacity value of the passed in "element"
-var opacity = 0
-var intervalID = 0;
-
-// function show(element) {
-//     var buttonToFade = document.getElementById(element);
-//     console.log(buttonToFade)
-//     opacity = Number(window.getComputedStyle(element).getPropertyValue("opacity"));
-//     if (opacity < 1) {
-//         opacity = opacity + 0.1;
-//         buttonToFade.style.opacity = opacity;
-//     } else {
-//         clearInterval(intervalID);
-//     }
-// }
-
 
 function showPattern(element) {
     var buttonToFade = document.getElementById(element);
     console.log(buttonToFade)
-    opacity = Number(window.getComputedStyle(buttonToFade).getPropertyValue('opacity'))
+    console.log(opacity)
+    buttonFlasher()
+    buttonToFade.style.opacity = opacity;
+    console.log(buttonToFade.style.opacity);
+}
+
+function flashOn() {
     if (opacity < 1) {
-        buttonFlasher()
-        buttonToFade.style.opacity = opacity;
+        opacity += .1;
+        console.log(opacity)
     } else {
         clearInterval(intervalID);
     }
 }
 
-function flashOn() {
-    opacity += .1;
-    return opacity
-}
+    function flashOff() {
 
+    }
 
-function flashOff() {
-
-}
-function buttonFlasher() {
-    setInterval(flashOn, 100)
-}
+    function buttonFlasher() {
+        setInterval(flashOn, 100)
+    }
 
 
 //Turns the players choice into a number and pushes it to playersArray
-function colorToNumber() {
-    var playerClick = (this).attr("id");
-    switch (playerClick) {
-        case "red":
-            playersArray.push(0);
-            showPattern(0);
-            break;
-        case "green":
-            playersArray.push(1);
-            showPattern(1);
-            break;
-        case "blue":
-            playersArray.push(2);
-            showPattern(2);
-            break;
-        case "yellow":
-            playersArray.push(3);
-            showPattern(3);
-            break;
+    function colorToNumber() {
+        var playerClick = (this).attr("id");
+        switch (playerClick) {
+            case "red":
+                playersArray.push(0);
+                showPattern(0);
+                break;
+            case "green":
+                playersArray.push(1);
+                showPattern(1);
+                break;
+            case "blue":
+                playersArray.push(2);
+                showPattern(2);
+                break;
+            case "yellow":
+                playersArray.push(3);
+                showPattern(3);
+                break;
+        }
+        compareSequence()
     }
-    compareSequence()
-}
 
 
 //need to compare playersArray and simonsArray to determine outcome
-function compareSequence() {
-}
+    function compareSequence() {
+    }
 
 
-function nextStage() {
-    stageCounter++;
-    var counterDisplay = document.getElementById('stage-counter')
-    counterDisplay.innerHTML = 'Stage: ' + stageCounter
+    function nextStage() {
+        stageCounter++;
+        var counterDisplay = document.getElementById('stage-counter')
+        counterDisplay.innerHTML = 'Stage: ' + stageCounter
 
 
-};
+    };
 
