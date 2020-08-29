@@ -66,24 +66,61 @@ var intervalID = 0;
 // }
 
 
+// function showPattern(element) {
+//     simonsArray.forEach(function (element, i) {
+//         var buttonToFade = document.getElementById(element)
+//         if (buttonToFade.style.opacity < 1) {
+//             opacity += 1
+//             buttonToFade.style.opacity = opacity
+//         } else {
+//             opacity = .3
+//             buttonToFade.style.opacity = opacity
+//         }
+//     })
+// }
 
 function showPattern(element) {
-    var buttonToFade = document.getElementById(element);
-    console.log(buttonToFade)
-    console.log(opacity)
-    buttonFlasher()
-    buttonToFade.style.opacity = opacity;
-    console.log(buttonToFade.style.opacity);
+    simonsArray.forEach(function (element, i) {
+        buttonFlasher(element)
+        flashOn(element)
+    })
 }
 
-function flashOn() {
-    if (opacity < 1) {
-        opacity += .1;
-        console.log(opacity)
-    } else {
+
+
+function flashOn(element) {
+    var buttonToFade = document.getElementById(element)
+    if (buttonToFade.style.opacity < 1) {
+        opacity += 1
+        buttonToFade.style.opacity = opacity
+    } else if (buttonToFade.style.opacity = 1) {
+        opacity = .3
+        buttonToFade.style.opacity = opacity
         clearInterval(intervalID);
     }
 }
+// else if (opacity) {
+//     opacity = .3
+//     buttonToFade.style.opacity = opacity
+// }
+
+// function showPattern(element) {
+//     var buttonToFade = document.getElementById(element);
+//     console.log(buttonToFade)
+//     console.log(opacity)
+//     buttonFlasher()
+//     buttonToFade.style.opacity = opacity;
+//     console.log(buttonToFade.style.opacity);
+// }
+
+// function flashOn() {
+//     if (opacity < 1) {
+//         opacity += .1;
+//         console.log(opacity)
+//     } else {
+//         clearInterval(intervalID);
+//     }
+// }
 
     function flashOff() {
 
