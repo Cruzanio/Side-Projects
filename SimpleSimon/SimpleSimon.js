@@ -81,7 +81,6 @@ var intervalID = 0;
 
 function showPattern(element) {
     simonsArray.forEach(function (element, i) {
-        buttonFlasher(element)
         flashOn(element)
     })
 }
@@ -123,11 +122,16 @@ function flashOn(element) {
 // }
 
     function flashOff() {
-
+    var buttonToFade = document.getElementById(element)
+    if (buttonToFade.style.opacity = 1) {
+            opacity = .3
+            buttonToFade.style.opacity = opacity
+            clearInterval(intervalID);
+        }
     }
 
     function buttonFlasher() {
-        setInterval(flashOn, 100)
+        setInterval(flashOn, 1000)
     }
 
 
