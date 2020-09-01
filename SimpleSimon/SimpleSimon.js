@@ -18,7 +18,6 @@ function randomColor() {
     simonsArray.push(randomColor);
     console.log(simonsArray)
     showPattern(simonsArray)
-    // showPattern(simonsArray[simonsArray.length - 1])
     nextStage()
     playersArray = [];
 }
@@ -29,32 +28,22 @@ function showPattern() {
     for (var i = 0; i <= simonsArray.length-1; i++ ) {
         var buttonToFade = document.getElementById(simonsArray[i])
         console.log(buttonToFade)
-        flashOn(buttonToFade)
-
+        setInterval(flashOn, 1000, buttonToFade)
+        // flashOn(buttonToFade)
         setTimeout(flashOff, 1000, buttonToFade)
     }
 }
 
-// function showPattern(element) {
-//     simonsArray.forEach(function (element, i) {
-//         var buttonToFade = document.getElementById(element)
-//         flashOn(element)
-//         setTimeout(flashOff, 1000, element)
-//     })
-// }
-
 function flashOn(buttonToFade) {
-    console.log(buttonToFade)
     buttonToFade.style.opacity = 1
 }
 function flashOff(buttonToFade) {
-    console.log(buttonToFade)
     buttonToFade.style.opacity = .3
     clearInterval(intervalID);
 }
 
 function buttonFlasher() {
-        setInterval(flashOn, 1000)
+        setInterval(flashOn, 1000, buttonToFade)
 }
 
 //Turns the players choice into a number and pushes it to playersArray
