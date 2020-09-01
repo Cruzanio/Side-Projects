@@ -30,7 +30,7 @@ function showPattern() {
         console.log(buttonToFade)
         setInterval(flashOn, 1000, buttonToFade)
         // flashOn(buttonToFade)
-        setTimeout(flashOff, 1000, buttonToFade)
+        // setTimeout(flashOn, 1000, buttonToFade)
     }
 }
 
