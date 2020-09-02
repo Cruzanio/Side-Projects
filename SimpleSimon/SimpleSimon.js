@@ -28,14 +28,13 @@ function showPattern() {
     for (var i = 0; i <= simonsArray.length-1; i++ ) {
         var buttonToFade = document.getElementById(simonsArray[i])
         console.log(buttonToFade)
-        setInterval(flashOn, 1000, buttonToFade)
-        // flashOn(buttonToFade)
-        // setTimeout(flashOn, 1000, buttonToFade)
+        setInterval(flashOn, 2000, buttonToFade)
     }
 }
 
 function flashOn(buttonToFade) {
     buttonToFade.style.opacity = 1
+    setTimeout(flashOff, 1000, buttonToFade)
 }
 function flashOff(buttonToFade) {
     buttonToFade.style.opacity = .3
