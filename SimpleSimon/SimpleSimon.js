@@ -28,7 +28,7 @@ function showPattern() {
     for (var i = 0; i <= simonsArray.length-1; i++ ) {
         var buttonToFade = document.getElementById(simonsArray[i])
         console.log(buttonToFade)
-        setInterval(flashOn, 2000, buttonToFade)
+        setTimeout(flashOn, 2000, buttonToFade)
     }
 }
 
