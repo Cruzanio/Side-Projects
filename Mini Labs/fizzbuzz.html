@@ -9,11 +9,11 @@
 
     function fizzbuzz(num) {
         for (var i = 0; i <= 100; i++) {
-            if (i%3 === 0 && i%5 === 0) {
+            if (i % 3 === 0 && i % 5 === 0) {
                 console.log("fizzbuzz " + i)
-            } else if (i%5 === 0) {
+            } else if (i % 5 === 0) {
                 console.log("buzz " + i)
-            } else if (i%3 === 0) {
+            } else if (i % 3 === 0) {
                 console.log("fizz " + i)
             } else {
                 console.log(i)
@@ -35,6 +35,24 @@
         }
     }
     fizzbuzz(30)
+
+
+    var numbers = [10, 17, 25, 97, 45, 197, null, '34', 'seven', 75, true]
+
+    function average(array) {
+        var total = 0
+        var countToAverage = 0
+        for (var i = 0; i <= array.length - 1; i++) {
+            if (array[i] === null || isNaN(array[i]) || typeof array[i] === 'string' || typeof array[i] === 'boolean') {
+                countToAverage++
+                continue;
+            } else {
+                total += array[i]
+            }
+        }
+        console.log(total / (array.length - countToAverage))
+    }
+    average(numbers)
 
 </script>
 </body>
