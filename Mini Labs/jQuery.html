@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery intro</title>
+</head>
+<body>
+<h1 id="codeup">Hello Codeup</h1>
+<p id="p1" class="important">jQuery is Cool!</p>
+<p class="not-important">jQuery is Sweet!</p>
+<h2 class="important">jQuery is Rad!</h2>
+<h3 class="not-important">Please type something below</h3>
+<form>
+    <input type="text" id="textfield" name="textfield" placeholder="Type here">
+    <button type="button" id="formButton">Click</button>
+</form>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+        crossorigin="anonymous">
+</script>
+<script>
+
+    (function(){ //IIFE
+        $().ready(function () {
+            var contents = $('#codeup').html();
+            $('#codeup').html('<strong>The change</strong>');
+            $('#p1').html('jQuery Rocks!');
+            $('.important').css('background-color', '#ff0')
+            $('.not-important').css('background-color', '#0F0')
+            $('p').css('font-size', '30px')
+            $('p, h1').css('color', 'red')
+            $('p > .important').css('color', 'blue')
+            $('*').css('border', '1px dashed #00F')
+            alert(contents);
+        });
+    })();
+
+</script>
+</body>
+</html>
