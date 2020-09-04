@@ -55,6 +55,23 @@
     }
     average(numbers)
 
+
+    var factors = []
+
+    function factorsOf(input) {
+        for (var i=1; i <= input; i++) {
+            for (var j=input; j >= 1; j--)
+            if ((i * j) === input) {
+                factors.push(i)
+                factors.push(j)
+            }
+        }
+    }console.log(factors)
+
+    factorsOf(300)
+
+
+
 </script>
 </body>
 </html>
