@@ -66,11 +66,23 @@ function compareSequence() {
         if (JSON.stringify(playersArray) === JSON.stringify(simonsArray)) {
             randomColor()
         } else {
-            alert('Resetting...')
+            if (confirm('Game Over. Would you like to try again?')) {
+                simonsArray = []
+                playersArray = []
+                stageCounter = 0
+                randomColor()
+            } else {
+                close()
+            }
+        }
+    } else if (playersArray.length > simonsArray.length) {
+        if (confirm('Game Over. Would you like to try again?')) {
             simonsArray = []
             playersArray = []
             stageCounter = 0
-            nextStage()
+            randomColor()
+        } else {
+            close()
         }
     }
 }
