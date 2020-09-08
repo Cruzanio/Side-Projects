@@ -16,7 +16,6 @@ window.onload = function () {
 function randomColor() {
     var randomColor = squares[Math.floor(Math.random() * squares.length)];
     simonsArray.push(randomColor);
-    console.log(simonsArray)
     showPattern(simonsArray)
     nextStage()
     playersArray = [];
@@ -26,7 +25,6 @@ function randomColor() {
 function showPattern() {
     for (var i = 0; i <= simonsArray.length - 1; i++) {
         var buttonToFade = document.getElementById(simonsArray[i])
-        console.log(buttonToFade)
         setTimeout(flashOn, 2000 * i, buttonToFade)
     }
 }
@@ -39,10 +37,6 @@ function flashOn(buttonToFade) {
 function flashOff(buttonToFade) {
     buttonToFade.style.opacity = .3
 }
-
-// function buttonFlasher() {
-//         setInterval(flashOn, 1000, buttonToFade)
-// }
 
 //Turns the players choice into a number and pushes it to playersArray
 $(document).ready(function () {
@@ -62,25 +56,23 @@ $(document).ready(function () {
                 playersArray.push("yellow");
                 break;
         }
-        compareSequence()
+        setTimeout(compareSequence, 500)
     })
 })
 
 //need to compare playersArray and simonsArray to determine outcome
 function compareSequence() {
     if (playersArray.length === simonsArray.length) {
-        for (var i = 0; i <= playersArray.length - 1; i++) {
-            if (playersArray[i] === simonsArray[i]) {
-                randomColor()
-            } else {
-                alert('Resetting...')
-                simonsArray = []
-                playersArray = []
-                stageCounter = 0
-            }
+        if (JSON.stringify(playersArray) === JSON.stringify(simonsArray)) {
+            randomColor()
+        } else {
+            alert('Resetting...')
+            simonsArray = []
+            playersArray = []
+            stageCounter = 0
+            nextStage()
         }
     }
-
 }
 
 function nextStage() {
