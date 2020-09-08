@@ -28,7 +28,7 @@ function showPattern() {
     for (var i = 0; i <= simonsArray.length-1; i++ ) {
         var buttonToFade = document.getElementById(simonsArray[i])
         console.log(buttonToFade)
-        setTimeout(flashOn, 2000, buttonToFade)
+        setTimeout(flashOn, 2000 * i, buttonToFade)
     }
 }
 
@@ -38,7 +38,6 @@ function flashOn(buttonToFade) {
 }
 function flashOff(buttonToFade) {
     buttonToFade.style.opacity = .3
-    clearInterval(intervalID);
 }
 
 function buttonFlasher() {
@@ -46,28 +45,25 @@ function buttonFlasher() {
 }
 
 //Turns the players choice into a number and pushes it to playersArray
-    function colorToNumber() {
-        var playerClick = (this).attr("id");
+    $(this).click(function colorToNumber() {
+        var playerClick = $(this).attr("id");
         switch (playerClick) {
             case "red":
-                playersArray.push(0);
-                showPattern(0);
+                playersArray.push("red");
                 break;
             case "green":
-                playersArray.push(1);
-                showPattern(1);
+                playersArray.push("green");
                 break;
             case "blue":
-                playersArray.push(2);
-                showPattern(2);
+                playersArray.push("blue");
                 break;
             case "yellow":
-                playersArray.push(3);
-                showPattern(3);
+                playersArray.push("yellow");
                 break;
         }
-        compareSequence()
-    }
+        console.log(playersArray)
+        // compareSequence()
+    })
 
 //need to compare playersArray and simonsArray to determine outcome
 function compareSequence() {
