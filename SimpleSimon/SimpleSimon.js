@@ -22,10 +22,9 @@ function randomColor() {
     playersArray = [];
 }
 
-var intervalID = 0;
-
+//Displays the passed Array
 function showPattern() {
-    for (var i = 0; i <= simonsArray.length-1; i++ ) {
+    for (var i = 0; i <= simonsArray.length - 1; i++) {
         var buttonToFade = document.getElementById(simonsArray[i])
         console.log(buttonToFade)
         setTimeout(flashOn, 2000 * i, buttonToFade)
@@ -36,16 +35,18 @@ function flashOn(buttonToFade) {
     buttonToFade.style.opacity = 1
     setTimeout(flashOff, 1000, buttonToFade)
 }
+
 function flashOff(buttonToFade) {
     buttonToFade.style.opacity = .3
 }
 
-function buttonFlasher() {
-        setInterval(flashOn, 1000, buttonToFade)
-}
+// function buttonFlasher() {
+//         setInterval(flashOn, 1000, buttonToFade)
+// }
 
 //Turns the players choice into a number and pushes it to playersArray
-    $(this).click(function colorToNumber() {
+$(document).ready(function () {
+    $('.colorButton').click(function () {
         var playerClick = $(this).attr("id");
         switch (playerClick) {
             case "red":
@@ -61,17 +62,30 @@ function buttonFlasher() {
                 playersArray.push("yellow");
                 break;
         }
-        console.log(playersArray)
-        // compareSequence()
+        compareSequence()
     })
+})
 
 //need to compare playersArray and simonsArray to determine outcome
 function compareSequence() {
+    if (playersArray.length === simonsArray.length) {
+        for (var i = 0; i <= playersArray.length - 1; i++) {
+            if (playersArray[i] === simonsArray[i]) {
+                randomColor()
+            } else {
+                alert('Resetting...')
+                simonsArray = []
+                playersArray = []
+                stageCounter = 0
+            }
+        }
+    }
+
 }
 
 function nextStage() {
-        stageCounter++;
-        var counterDisplay = document.getElementById('stage-counter')
-        counterDisplay.innerHTML = 'Stage: ' + stageCounter
+    stageCounter++;
+    var counterDisplay = document.getElementById('stage-counter')
+    counterDisplay.innerHTML = 'Stage: ' + stageCounter
 };
 

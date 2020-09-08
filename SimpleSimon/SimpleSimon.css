@@ -10,28 +10,28 @@ body {
     height: 100%;
 }
 
-.square-red {
+#red {
     height: 10em;
     width: 10em;
     background-color: #F00;
     opacity: 30%;
 }
 
-.square-green {
+#green {
     height: 10em;
     width: 10em;
     background-color: #0F0;
     opacity: 30%;
 }
 
-.square-blue {
+#blue {
     height: 10em;
     width: 10em;
     background-color: #00F;
     opacity: 30%;
 }
 
-.square-yellow {
+#yellow {
     height: 10em;
     width: 10em;
     background-color: #FF0;
