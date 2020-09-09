@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id="input" type="text">
+<br>
+<button id="enter" type="button">Show</button>
+<div id="output"></div>
+
+
+<script src="js/jquery-2.2.4.js"></script>
+<script>
+
+    (function () { // IFEE
+        "use strict"
+        $().ready(function () {
+            $('button').click(function () {
+                $('#output').html($('#input').val())
+            })
+        })
+    })()
+
+</script>
+<script>
+
+    // document.getElementById('show').addEventListener("click", function () {
+    //     document.getElementById('output').innerHTML = document.getElementById('input').value;
+    // });
+
+</script>
+
+</body>
+</html>
