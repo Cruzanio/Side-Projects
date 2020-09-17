@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Warmup</title>
+</head>
+<body>
+<main>
+    <div>bob</div>
+    <div>STEVE</div>
+    <div>sAlLY</div>
+</main>
+<h2 id="output"></h2>
+</body>
+<script>
+
+    var last = {
+        lName: 'smith'
+    };
+
+    var output = document.getElementsByTagName("div")
+
+    function toLowerCap(input) {
+        for (var i = 0; i <= input.length-1; i++) {
+            var lower = input[i].textContent.toLowerCase()
+            var lowerToArray = lower.split("")
+            var capitalFirst = lowerToArray[0].toUpperCase()
+            lowerToArray.shift()
+            lowerToArray.unshift(capitalFirst)
+            var join = lowerToArray.join("")
+            var toDisplay = join + " " + objectLower(last.lName)
+            output[i].innerHTML = toDisplay
+        }
+    }
+    toLowerCap(output)
+
+    function objectLower(input) {
+        var lower = input.toLowerCase()
+        var lowerToArray = lower.split("")
+        var capitalFirst = lowerToArray[0].toUpperCase()
+        lowerToArray.shift()
+        lowerToArray.unshift(capitalFirst)
+        var join = lowerToArray.join("")
+        return join
+    }
+
+</script>
+</html>
