@@ -9,8 +9,8 @@
     <div>bob</div>
     <div>STEVE</div>
     <div>sAlLY</div>
+    <button id="change" type="button">Click to Fix</button>
 </main>
-<h2 id="output"></h2>
 </body>
 <script>
 
@@ -19,29 +19,27 @@
     };
 
     var output = document.getElementsByTagName("div")
+    document.getElementById("change").addEventListener("click", toLowerCap)
 
-    function toLowerCap(input) {
-        for (var i = 0; i <= input.length-1; i++) {
-            var lower = input[i].textContent.toLowerCase()
-            var lowerToArray = lower.split("")
-            var capitalFirst = lowerToArray[0].toUpperCase()
-            lowerToArray.shift()
-            lowerToArray.unshift(capitalFirst)
-            var join = lowerToArray.join("")
-            var toDisplay = join + " " + objectLower(last.lName)
-            output[i].innerHTML = toDisplay
+    function toLowerCap() {
+        for (var i = 0; i <= output.length-1; i++) {
+            output[i].innerHTML = objectLower(output[i].textContent.toLowerCase()) + " " + objectLower(last.lName)
         }
     }
-    toLowerCap(output)
 
     function objectLower(input) {
-        var lower = input.toLowerCase()
-        var lowerToArray = lower.split("")
-        var capitalFirst = lowerToArray[0].toUpperCase()
-        lowerToArray.shift()
-        lowerToArray.unshift(capitalFirst)
-        var join = lowerToArray.join("")
+        var strInArray = input.toLowerCase().split("")
+        var capitalFirst = strInArray[0].toUpperCase()
+        strInArray.shift()
+        strInArray.unshift(capitalFirst)
+        var join = strInArray.join("")
         return join
+    }
+
+    function toLowerCap() {
+        for (let element of output) {
+            element.innerHTML = `${objectLower(element.textContent.toLowerCase())} ${objectLower(last.lName)}`
+        }
     }
 
 </script>
