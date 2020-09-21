@@ -7,6 +7,22 @@
 <body>
 <script>
 
+    const FizzBuzz = (num = 30) => {
+        for (let i=1;i<=num;i++){
+            if (i % 15 === 0) {
+                console.log(`${i}: fizzbuzz`)
+            } else if (i % 3 === 0) {
+                console.log(`${i}: fizz`)
+            } else if (i % 5 === 0) {
+                console.log(`${i}: buzz`)
+            } else {
+                console.log(`${i}`)
+            }
+        }
+    }
+    FizzBuzz()
+    FizzBuzz(15)
+
     function fizzbuzz(num) {
         for (var i = 0; i <= 100; i++) {
             if (i % 3 === 0 && i % 5 === 0) {
@@ -35,7 +51,7 @@
             }
         }
     }
-    fizzbuzz(30)
+    // fizzbuzz(30)
 
 
     var numbers = [10, 17, 25, 97, 45, 197, null, '34', 'seven', 75, true]
@@ -53,7 +69,7 @@
         }
         console.log(total / (array.length - countToAverage))
     }
-    average(numbers)
+    // average(numbers)
 
 
     var factors = []
@@ -66,9 +82,9 @@
                 factors.push(j)
             }
         }
-    }console.log(factors)
-
-    factorsOf(300)
+    }
+    // console.log(factors)
+    // factorsOf(300)
 
 </script>
 </body>
