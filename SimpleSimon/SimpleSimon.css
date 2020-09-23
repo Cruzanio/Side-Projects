@@ -1,22 +1,17 @@
 html {
     box-sizing: border-box;
     height: 100%;
-    /*background-image: url("lava.jpeg");*/
-    /*background-repeat: no-repeat;*/
-    /*background-size: cover;*/
 }
-
+@font-face {
+    font-family: SpaceFont;
+    src: url("SpaceFont2.ttf");
+}
 body {
-    background-image: url("");
-    background-repeat: no-repeat;
-    background-size: cover;
     height: 100%;
 }
 /*#background {*/
 /*}*/
-.main-container {
-    height: 100%;
-}
+
 .colorButton {
     height: 10em;
     width: 10em;
@@ -54,45 +49,61 @@ button:focus {outline:0;}
     background-color: #FF0;
 }
 
-
-
-.outer-square {
-    border: .5em solid lightgrey;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.r-g {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    margin-left: auto;
-}
-.b-y {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    margin-right: auto;
-
-}
-
-.main-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: 100%;
-    margin: 0;
-
+.container {
+    font-family: SpaceFont;
+    color: white;
 }
 
 h1 {
     text-align: center;
 }
 
-/*hardcode size*/
+header {
+    position: relative;
+    background-color: black;
+    height: 100vh;
+    min-height: 25rem;
+    width: 100%;
+    overflow: hidden;
+}
+
+header video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 0;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+
+header .container {
+    position: relative;
+    z-index: 2;
+    text-shadow: 10px 10px 20px 20px black;
+}
+
+header .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.5;
+    z-index: 1;
+}
+
+@media (pointer: coarse) and (hover: none) {
+    header {
+        background: url('https://source.unsplash.com/XT5OInaElMw/1600x900') black no-repeat center center scroll;
+    }
+    header video {
+        display: none;
+    }
+}
