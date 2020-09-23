@@ -46,9 +46,7 @@ button:focus {outline:0;}
     background-color: #FF0;
 }
 
-.container {
-    width: 50%
-}
+
 
 .outer-square {
     border: .5em solid lightgrey;

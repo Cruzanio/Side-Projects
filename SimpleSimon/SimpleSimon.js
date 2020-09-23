@@ -25,13 +25,13 @@ function randomColor() {
 function showPattern() {
     for (var i = 0; i <= simonsArray.length - 1; i++) {
         var buttonToFade = document.getElementById(simonsArray[i])
-        setTimeout(flashOn, 2000 * i, buttonToFade)
+        setTimeout(flashOn, 750 * i, buttonToFade)
     }
 }
 
 function flashOn(buttonToFade) {
     buttonToFade.style.opacity = 1
-    setTimeout(flashOff, 1000, buttonToFade)
+    setTimeout(flashOff, 250, buttonToFade)
 }
 
 function flashOff(buttonToFade) {
