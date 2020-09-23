@@ -35,7 +35,7 @@ function flashOn(buttonToFade) {
 }
 
 function flashOff(buttonToFade) {
-    buttonToFade.style.opacity = .3
+    buttonToFade.style.opacity = .5
 }
 
 //Turns the players choice into a number and pushes it to playersArray
