@@ -1,0 +1,24 @@
+html {
+    box-sizing: border-box;
+    height: 100%;
+}
+
+body {
+    color: lime;
+    background-color: black;
+}
+@font-face {
+    font-family: Blocks;
+    src: url("baby blocks.ttf");
+}
+h1 {
+    font-family: Blocks;
+}
+#input {
+    background-color: lime;
+    color: black;
+}
+#run {
+    color: #0f66f4;
+    background-color: transparent;
+}
