@@ -13,7 +13,7 @@
                 let addTo = ''
                 calculate = 0
                 for (let element of array) {
-                    addTo += ` (${element} ^ ${userEntry.length}) +`
+                    addTo += ` (${element}<sup>${userEntry.length}</sup>) +`
                     calculate += Math.pow(element, userEntry.length)
                 }
                 return addTo.slice(0, -1)
